@@ -1,7 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import { LocationSuggest } from 'wingman-fe';
+import { useApolloClient } from '@apollo/client';
 
 function App() {
+  const client = useApolloClient();
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +22,8 @@ function App() {
           Learn React
         </a>
       </header>
+
+      <LocationSuggest schemeId="seekAnz" client={client} />;
     </div>
   );
 }
